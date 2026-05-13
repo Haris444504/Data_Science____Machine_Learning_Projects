@@ -8,7 +8,7 @@ from scipy import stats
 plt.style.use('seaborn-v0_8')
 sns.set_theme(palette= "muted",style="whitegrid")
 
-path = pd.read_csv(r"C:\Users\Haris_hp\OneDrive\Documents\ecommerce_dataset.csv")
+path = pd.read_csv(r"[Enter your path].csv")
 data = pd.DataFrame(path)
 
 print(data.head(10))
