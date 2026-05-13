@@ -164,11 +164,6 @@ python Car_Price_Prediction.py
 python Insurance_Charges_Prediction.py
 ```
 
-> ⚠️ **Important:** Update the dataset file path inside each script before running:
-> ```python
-> df = pd.read_csv(r"your_path_to_dataset.csv")
-> ```
-
 ---
 
 ## 🧩 Folder Structure
