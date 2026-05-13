@@ -10,7 +10,7 @@ from scipy.stats import pearsonr
 from scipy.stats import chi2_contingency
 
 
-data = pd.read_csv(r"C:\Users\Haris_hp\Downloads\insurance.csv")
+data = pd.read_csv(r"[Enter your path].csv")
 print(data.head())
 
 # data analysis
@@ -24,33 +24,33 @@ print(data.columns)
 # for distrubation of numerical columns
 numeric_columns = ['age', 'bmi', 'children', 'charges']
 
-# for column in numeric_columns:
-#     plt.figure(figsize=(8, 4))
-#     sns.histplot(data[column], kde=True,bins = 20)
-#     plt.show()
+for column in numeric_columns:
+    plt.figure(figsize=(8, 4))
+    sns.histplot(data[column], kde=True,bins = 20)
+    plt.show()
 
-# # for categorical columns we can use countplot
-# sns.countplot(x='region', data=data)
-# plt.show()
-# sns.countplot(x='children', data=data)
-# plt.show()
-# sns.countplot(x=data['sex'])
-# plt.show()
-# sns.countplot(x=data['smoker'])
-# plt.show()
+# for categorical columns we can use countplot
+sns.countplot(x='region', data=data)
+plt.show()
+sns.countplot(x='children', data=data)
+plt.show()
+sns.countplot(x=data['sex'])
+plt.show()
+sns.countplot(x=data['smoker'])
+plt.show()
 
-# for outliers detection we can use boxplot
-# for col in numeric_columns:
-#     plt.figure(figsize=(6,4))
-#     sns.boxplot(x=data[col])
-#     plt.show()
+for outliers detection we can use boxplot
+for col in numeric_columns:
+    plt.figure(figsize=(6,4))
+    sns.boxplot(x=data[col])
+    plt.show()
 
-# plt.figure(figsize=(10,6))
-# # correlation heatmap for numerical columns it is only for numeric values.
-# sns.heatmap(data.corr(numeric_only=True) , annot=True , cmap='coolwarm')
-# plt.show()
+plt.figure(figsize=(10,6))
+# correlation heatmap for numerical columns it is only for numeric values.
+sns.heatmap(data.corr(numeric_only=True) , annot=True , cmap='coolwarm')
+plt.show()
 
-# data clearing and preprocessing
+data clearing and preprocessing
 
 data_cleaned = data.copy()
 data_cleaned.drop_duplicates(inplace=True)
@@ -138,3 +138,31 @@ print(chi2_df)
 
 # FIXED: use dynamic region col instead of hardcoded 'region_2'
 print(data_cleaned[['age','sex','bmi','children','smoker','charges', region_cols[0] ,'bmi_category_Obese']])
+
+x = data_cleaned.drop(columns=['charges'] , axis=1) 
+y = data_cleaned['charges']
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
+
+# x_train = 80% data
+# x_test = 20% data
+# we will train our model on x_train and y_train and then 
+# we will test our model on x_test and y_test to see 
+# how well our model is performing.
+
+model = LinearRegression()
+model.fit(x_train, y_train)
+
+y_pred = model.predict(x_test)
+print(y_pred)
+
+mse = mean_squared_error(y_test , y_pred)
+r2 = r2_score(y_test , y_pred)
+print(f"Mean Squared Error: {mse}")
+print(f"R-squared: {r2}")
+
+n = x_test.shape[0]
+p = x_test.shape[1]
+
+adjusted_r2 = 1 - (1-r2)*(n-1)/(n-p-1)
+print(f"Adjusted R-squareed: {adjusted_r2}")
