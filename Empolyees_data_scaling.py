@@ -4,7 +4,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler , MinMaxScaler
 
 
-data_set = pd.read_csv(r"C:\Users\Haris_hp\Downloads\raw_employee_practice_data.csv")
+data_set = pd.read_csv(r"[Enter your path].csv")
 print(data_set.describe())
 print(data_set.isnull().sum())
 # salary cleaning
