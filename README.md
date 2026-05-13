@@ -1,153 +1,217 @@
-📂 Project 1: E-commerce Data Analysis (Ecommerece_data_by_google.py)
-📘 Description
+# 📊 Data Analytics & Machine Learning Projects
 
-Analyzes an e-commerce dataset to uncover key business insights such as:
+> A collection of end-to-end data analysis and machine learning projects built with Python — covering healthcare, e-commerce, automotive, and insurance domains.
 
-Total revenue generated
+---
 
-Average order value (AOV)
+## 🗂️ Table of Contents
 
-Most popular product categories
+- [Project 1 — E-commerce Data Analysis](#-project-1--e-commerce-data-analysis)
+- [Project 2 — Patient Data Analysis](#-project-2--patient-data-analysis)
+- [Project 3 — Heart Disease Prediction](#-project-3--heart-disease-prediction)
+- [Project 4 — Car Price Prediction](#-project-4--car-price-prediction)
+- [Project 5 — Insurance Charges Prediction](#-project-5--insurance-charges-prediction)
+- [How to Run](#️-how-to-run)
+- [Folder Structure](#-folder-structure)
+- [Skills Demonstrated](#-skills-demonstrated)
+- [Author](#-author)
 
-Top revenue-generating cities
+---
 
-Age groups and payment method trends
+## 📦 Project 1 — E-commerce Data Analysis
+**File:** `Ecommerce_data_by_google.py`
 
-Delivery performance (on-time vs late)
+Analyzes a large e-commerce dataset to extract actionable business intelligence around sales, customers, and logistics.
 
-🧮 Key Steps
+**Business Insights:**
+- Total revenue and Average Order Value (AOV)
+- Most popular product categories
+- Top revenue-generating cities
+- Age group and payment method trends
+- Delivery performance — on-time vs. late
 
-Data Loading & Cleaning
+**Key Steps:**
+- Removed duplicates and handled missing values
+- Engineered `Total_Spend` feature
+- Extracted `Year`, `Month`, `Day` from order dates
 
-Remove duplicates
+**Visualizations:**
 
-Handle missing values
+| Chart | Purpose |
+|-------|---------|
+| 📊 Bar Chart | Sales per Product Category |
+| 🥧 Pie Chart | Payment Method Distribution |
+| 📈 Histogram | Age Distribution & Monthly Trends |
+| 🔥 Heatmap | Correlation — Age, Quantity, Spend |
+| 📦 Boxplot | Spending Distribution by Gender |
 
-Compute new features like Total_Spend
+**Libraries:** `pandas` `numpy` `matplotlib` `seaborn` `scipy`
 
-Extract Year, Month, and Day from order dates
+---
 
-Exploratory Data Analysis (EDA)
+## 🏥 Project 2 — Patient Data Analysis
+**File:** `Patient_data.py`
 
-Revenue, sales, and product insights
+Healthcare analytics pipeline to understand patient visit trends, consultation revenue, and doctor performance.
 
-Customer demographics
+**Business Insights:**
+- Total consultation revenue
+- Most visited department
+- Most common patient age group
+- Top performing doctor by patient count
+- No-show (missed appointment) percentage
 
-Late delivery percentage
+**Key Steps:**
+- Converted appointment dates to datetime format
+- Removed duplicate patient records
+- Added time-based columns: `Year`, `Month`, `Day`
 
-Visualizations
+**Visualizations:**
 
-📊 Bar Chart → Sales per Product Category
+| Chart | Purpose |
+|-------|---------|
+| 📊 Bar Chart | Patients per Department |
+| 🥧 Pie Chart | Payment Method Distribution |
+| 🔥 Heatmap | Correlation — Age, Fees, Visits |
+| 📦 Boxplot | Fee Distribution by Department |
 
-🥧 Pie Chart → Payment Method Distribution
+**Libraries:** `pandas` `numpy` `matplotlib` `seaborn` `scipy`
 
-📈 Line/Histogram → Age Distribution & Monthly Trends
+---
 
-🔥 Heatmap → Correlation between Age, Quantity, and Spend
+## ❤️ Project 3 — Heart Disease Prediction
+**File:** `Heart_Disease_Prediction.py`
 
-📦 Boxplot → Spending by Gender
+End-to-end supervised ML pipeline to classify whether a patient has heart disease based on clinical features.
 
-📦 Libraries Used
-pandas, numpy, seaborn, matplotlib, scipy
+**ML Pipeline:**
 
-📸 Example Insights
+```
+Raw Data → EDA → Visualization → Encoding → Scaling → Model Training → Evaluation
+```
 
-Total Revenue: Total customer spend across all orders
+**Steps Covered:**
+- **EDA** — Feature distributions, class balance, outlier detection
+- **Visualization** — Correlation heatmap, feature distributions by target class
+- **Encoding** — Label Encoding / One-Hot Encoding for categorical features
+- **Scaling** — StandardScaler / MinMaxScaler for numerical features
+- **Supervised Learning** — Logistic Regression, Decision Tree, Random Forest, SVM
+- **Evaluation** — Accuracy, Precision, Recall, F1-Score, Confusion Matrix, ROC-AUC
 
-Top City: Highest revenue-generating location
+**Libraries:** `pandas` `numpy` `matplotlib` `seaborn` `scikit-learn`
 
-Late Deliveries: % of orders not delivered on time
+---
 
+## 🚗 Project 4 — Car Price Prediction
+**File:** `Car_Price_Prediction.py`
 
-🏥 Project 2: Patient Data Analysis (Patient_data.py)
-📘 Description
+Regression-based machine learning pipeline to predict the selling price of used cars based on features like brand, year, mileage, and fuel type.
 
-Performs healthcare data analytics to understand patient visit trends, fee distribution, and doctor performance.
+**ML Pipeline:**
 
-🧮 Key Steps
+```
+Raw Data → EDA → Visualization → Encoding → Scaling → Model Training → Evaluation
+```
 
-Data Cleaning & Preprocessing
+**Steps Covered:**
+- **EDA** — Price distribution, feature relationships, outlier analysis
+- **Visualization** — Price trends by brand, year, and fuel type
+- **Encoding** — Handling categorical features (fuel type, transmission, seller type)
+- **Scaling** — Normalizing numerical features
+- **Supervised Learning** — Linear Regression, Random Forest Regressor, Gradient Boosting
+- **Evaluation** — MAE, MSE, RMSE, R² Score
 
-Convert appointment dates to datetime
+**Libraries:** `pandas` `numpy` `matplotlib` `seaborn` `scikit-learn`
 
-Remove duplicate patient records
+---
 
-Add time-based columns (Year, Month, Day)
+## 🏦 Project 5 — Insurance Charges Prediction
+**File:** `Insurance_Charges_Prediction.py`
 
-Business Insights
+Regression pipeline to predict medical insurance charges based on demographic and lifestyle features such as age, BMI, smoking status, and region.
 
-Total consultation revenue
+**ML Pipeline:**
 
-Most visited department
+```
+Raw Data → EDA → Visualization → Encoding → Scaling → Model Training → Evaluation
+```
 
-Most common age group
+**Steps Covered:**
+- **EDA** — Charge distribution, skewness analysis, feature correlations
+- **Visualization** — Impact of smoking, BMI, and age on insurance charges
+- **Encoding** — Encoding region, sex, and smoker status
+- **Scaling** — Feature normalization for regression models
+- **Supervised Learning** — Linear Regression, Ridge, Lasso, Random Forest Regressor
+- **Evaluation** — MAE, MSE, RMSE, R² Score
 
-Top performing doctor
+**Libraries:** `pandas` `numpy` `matplotlib` `seaborn` `scikit-learn`
 
-No-show (missed visit) percentage
+---
 
-Visualizations
+## ⚙️ How to Run
 
-📊 Bar Chart → Patients per Department
+**Step 1 — Install all dependencies:**
+```bash
+pip install pandas numpy matplotlib seaborn scipy scikit-learn
+```
 
-🥧 Pie Chart → Payment Method Distribution
-
-🔥 Heatmap → Correlation (Age, Fees, Visits)
-
-📦 Boxplot → Fee Distribution by Department
-
-📦 Libraries Used
-pandas, numpy, seaborn, matplotlib, scipy
-
-📸 Example Insights
-
-Highest Revenue City: City with the largest total consultation fees
-
-Top Doctor: Doctor with the highest number of patients
-
-No-show Percentage: Patients who missed appointments
-
-⚙️ How to Run
-Prerequisites
-
-Install all dependencies:
-
-pip install pandas numpy matplotlib seaborn scipy
-
-Run the Scripts
-python Ecommerece_data_by_google.py
+**Step 2 — Run any project script:**
+```bash
+python Ecommerce_data_by_google.py
 python Patient_data.py
+python Heart_Disease_Prediction.py
+python Car_Price_Prediction.py
+python Insurance_Charges_Prediction.py
+```
 
+> ⚠️ **Important:** Update the dataset file path inside each script before running:
+> ```python
+> df = pd.read_csv(r"your_path_to_dataset.csv")
+> ```
 
-Make sure to update the dataset paths inside the scripts before running:
+---
 
-pd.read_csv(r"your_path_to_dataset.csv")
+## 🧩 Folder Structure
 
-🧩 Folder Structure
-📁 Data-Analytics-Projects/
+```
+📁 Data-Analytics-ML-Projects/
 │
-├── Ecommerece_data_by_google.py
+├── Ecommerce_data_by_google.py
 ├── Patient_data.py
+├── Heart_Disease_Prediction.py
+├── Car_Price_Prediction.py
+├── Insurance_Charges_Prediction.py
+│
 ├── README.md
+│
 └── datasets/
     ├── ecommerce_dataset.csv
-    └── healthcare_dataset.csv
+    ├── healthcare_dataset.csv
+    ├── heart_disease_dataset.csv
+    ├── car_price_dataset.csv
+    └── insurance_dataset.csv
+```
 
-📊 Skills Demonstrated
+---
 
-Data Cleaning & Feature Engineering
+## 📊 Skills Demonstrated
 
-Statistical Analysis
+| Area | Topics |
+|------|--------|
+| **Data Wrangling** | Cleaning, deduplication, missing value handling, feature engineering |
+| **EDA** | Statistical summaries, distribution analysis, outlier detection |
+| **Visualization** | Bar, pie, histogram, heatmap, boxplot, ROC curves |
+| **Preprocessing** | Label encoding, one-hot encoding, StandardScaler, MinMaxScaler |
+| **Machine Learning** | Classification, Regression, Ensemble methods |
+| **Model Evaluation** | Accuracy, F1, ROC-AUC, MAE, RMSE, R² Score |
+| **Business Insights** | Revenue analysis, customer segmentation, risk prediction |
 
-Data Visualization (Matplotlib, Seaborn)
+---
 
-Business Insight Generation
+## 👨‍💻 Author
 
-Correlation & Trend Analysis
-
-👨‍💻 Author
-
-Haris Saddique
+**Haris Saddique**  
 Data Analytics | Machine Learning Enthusiast
-📫 GitHub Profile
- | LinkedIn
+
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://linkedin.com/)
