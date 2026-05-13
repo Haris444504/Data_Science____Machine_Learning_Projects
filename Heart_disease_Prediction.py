@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import sheryanalysis as sh
 from sklearn.decomposition import PCA
 
-data = pd.read_csv(r"C:\Users\Haris_hp\Downloads\heart.csv")
+data = pd.read_csv(r"[Enter your path].csv")
 print(data.describe())
 print(data.head(10))
 print(data.columns)
