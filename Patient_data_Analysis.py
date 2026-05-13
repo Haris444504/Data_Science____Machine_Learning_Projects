@@ -8,7 +8,7 @@ plt.style.use('seaborn-v0_8')
 
 sns.set_theme(palette="muted" , style="whitegrid")
 
-path = pd.read_csv(r"C:\Users\Haris_hp\Downloads\healthcare_dataset.csv")
+path = pd.read_csv(r"[Enter your path].csv")
 
 data = pd.DataFrame(path)
 
